@@ -1,0 +1,11 @@
+---
+class_name: "KubernetesPodSensor"
+entry_point: "pod_list.py"
+description: "Test sensor that emits triggers"
+poll_interval: 30
+trigger_types:
+  -
+    name: "event1"
+    description: "Trigger to send mail."
+    payload_schema:
+      type: "object"

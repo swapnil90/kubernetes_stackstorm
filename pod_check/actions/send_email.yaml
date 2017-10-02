@@ -1,0 +1,14 @@
+---
+name: "send_email"
+runner_type: "python-script"
+description: "Sends email"
+enabled: true
+entry_point: "send_email.py"
+pack: "pod_check"
+parameters:
+    replication_count:
+        type: "int"
+        description: "Replication count of Nginx"
+        required: true
+        position: 0
+

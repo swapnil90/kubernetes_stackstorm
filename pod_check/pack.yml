@@ -1,0 +1,12 @@
+---
+ref: pod_check
+name: pod_check
+description: st2 content pack containing Kubernetes pod sensor
+keywords:
+  - kubernetes
+  - sensors
+  - thirdpartyresource
+version: 0.1.0
+author: Swapnil Khanapurkar
+email: khanapurkarswapnil@gmail.com
+

@@ -1,0 +1,11 @@
+---
+name: pod_count_event1
+pack: pod_check
+description: Rule for firing pod_check.event1.
+enabled: true
+trigger:
+    type: pod_check.event1
+action:
+    ref: pod_check.send_email
+    parameters:
+        replication_count: {{trigger.replication_count}}
