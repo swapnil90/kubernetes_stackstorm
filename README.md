@@ -25,17 +25,21 @@ pip install kubernetes st2client argcomplete pytz python-editor jsonschema promp
 
 iv. copy ~/.kube/config from google cloud shell into stackstorm pod or refer to https://cloud.google.com/sdk/docs/quickstart-debian-ubuntu for installation and configuration and configure kubectl using command `gcloud container clusters get-credentials nginx-cluster --zone us-central1-a --project <project id>` got from clicking on connect button under clusters on google cloud site
 
-v. copy the pod_check folder into /opt/stackstorm/configs/ directory
+v. modify pod_check/actions/send_email.py to provide your gmail creds and the reciever email id
 
-vi. modify pod_check/actions/send_email.py to provide your gmail creds and the reciever email id
+vi. any one of the above 2 ways can be used to register a pack
 
-vii. To register a pack
+1. copy the pod_check folder into /opt/stackstorm/configs/ directory and register it as follows:-
 
 st2ctl reload --register-all
 
-# On Google cloud shell, change replication value from 3 to 6 in nginx.yml to test email getting generated
+2. Directly install it from the git repo:-
 
-kubectl resize -f nginx.yml
+st2 pack install <path to pod_check folder>/pod_check
+
+# On Google cloud shell, resize replication from 3 to 6 using following command
+
+kubectl scale --replicas=6 -f nginx.yml
 
 # To delete the deployment
 
