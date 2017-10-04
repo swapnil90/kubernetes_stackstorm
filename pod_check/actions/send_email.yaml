@@ -7,7 +7,7 @@ entry_point: "send_email.py"
 pack: "pod_check"
 parameters:
     replication_count:
-        type: "int"
+        type: "integer"
         description: "Replication count of Nginx"
         required: true
         position: 0

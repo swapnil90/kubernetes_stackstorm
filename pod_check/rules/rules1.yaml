@@ -8,4 +8,4 @@ trigger:
 action:
     ref: pod_check.send_email
     parameters:
-        replication_count: {{trigger.replication_count}}
+        replication_count: "{{ trigger.replication_count }}"
